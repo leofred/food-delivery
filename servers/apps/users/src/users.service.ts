@@ -49,8 +49,8 @@ export class UsersService {
       phone_number,
     };
 
-    const { activationCode } = await this.createActivationToken(user);
-
+    const createActivationToken = await this.createActivationToken(user);
+    const activationCode = createActivationToken.activationCode;
     console.log('activationCode', activationCode);
 
     return { user, response };
